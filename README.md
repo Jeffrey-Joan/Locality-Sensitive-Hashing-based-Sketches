@@ -4,8 +4,8 @@ This study delves into the realm of autonomous vehicle tracking utilizing Locali
 
 Traditional object tracking in computer vision often relies on sophisticated deep learning models, leveraging complex architectures like Convolutional Neural Networks (CNNs) and recurrent structures for accurate object detection and tracking. These methods excel in precise localization and tracking of objects within video sequences but encounter challenges in scalability and real-time processing due to their computational demands. To combat these demands and challenges, we propose to revolutionize object tracking by introducing a novel paradigm centered around Locality-Sensitive Hashing (LSH) sketches. These sketches offer a different avenue for object tracking, utilizing probabilistic data structures to approximate nearest neighbor count efficiently. Our proposal maintains the deep learning principles for object detection but shifts the focus from building a solely intricate deep learning architecture to tailored parameter-adjusted LSH sketches. We aim to streamline the tracking process, potentially enabling faster, scalable, and autonomous object tracking in dynamic visual environments. This transition from traditional deep learning-based tracking to our autonomous tracking using locality-sensitive sketches signifies a paradigm shift towards more efficient and adaptable methodologies in computer vision applications.
 
-## ** Experimental Settings**
-###Dataset 
+##  Experimental Settings
+### Dataset  
 
 For the implementation, we intend on using the "Highway Traffic Videos Dataset" available on Kaggle. This dataset comprises a database of video of traffic on the highway used for monitoring the traffic while also helping to keep track of what kinds of vehicles are traversing through the road. The video was taken over two days from a stationary camera overlooking I-5 in Seattle, WA. The videos were labeled manually as light, medium, and heavy traffic, which correspond respectively to free-flowing traffic, traffic at reduced speed, and stopped or very slow-speed traffic. The video is provided courtesy of the Washington State Department of Transportation [http://www.wsdot.wa.gov/].
 
@@ -51,7 +51,7 @@ The following code snippet gives an idea of how our LSH based sketch works using
 Let us consider an example to better understand, let the vector input size be 1024, let the sim(essentially our K choices) be 8 and let the nbits be 4. In this case our hashcode/hashsignature would be of length 2048(basically double our input vector size). Moreover the maximum bucket size would be 2^nbits(all possible binary combinations).
 
 
-## **Results and Inferences**
+## Results and Inferences
 
 ![Table_distribution](https://github.com/Jeffrey-Joan/Locality-Sensitive-Hashing-based-Sketches/assets/57098615/28b31bc8-86a0-4992-b7c0-34ba80e22320)
 
@@ -166,6 +166,6 @@ Max: 5098  Min: 8  Median: 1976.0
 
 Unfortunately, we can observe that the Min, Max and median values are similar for different labels. This means that our input vector is quite similar for all the labels. We should be getting much better results if we can generate input vectors that are similar within each category and dissimilar between them.
 
-## **Conclusion**
+## Conclusion
 
 Our proposed LSH-based sketch is a very promising method to estimate count of similar vehicles without any Machine learning algorithms. Also it’s an unsupervised method on its own when we use some basic image processing to get vector representation instead of Neural Networks. Furthermore, The model is also much more efficient in memory and compute compared to Deep Neural Networks. The main problem with the LSH-based sketch is the huge number of hyperparameters that must be manually tuned based. This requires domain expertise and plenty of error and trial. This could make the effective implementation of this a hassle.
