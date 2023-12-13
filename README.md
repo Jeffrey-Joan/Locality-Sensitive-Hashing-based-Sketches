@@ -68,12 +68,19 @@ There isn’t a strong overlap of the hashes and they have a more variance among
 Finally, Let us see how accurate those LSH-sketch with those hyperparameter values are compared to the actual count and the min, median and max of the lookup function for those inputs.
 
 The actual count of each vehicle types are,
+
 Sedan       5776
+
 SUV         1372
+
 Microbus     860
+
 Truck        820
+
 Bus          555
+
 Minivan      467
+
 The actual count of each vehicle types are,
 For dim = 32 and nbits = 2,
 Total time taken for insertion 320.0221793651581
